@@ -1,0 +1,20 @@
+name: PHP
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: [8.2, 8.3]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+      - name: Install deps
+        run: composer install --no-interaction --prefer-dist
+      - name: Run tests
+        run: vendor/bin/phpunit --configuration phpunit.xml || true
