@@ -1,0 +1,20 @@
+{
+  "name": "iahunter/juniper-mist",
+  "description": "PHP SDK for Juniper Mist Cloud APIs (PSR-4, Guzzle, PHP 8.2+)",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^8.2",
+    "guzzlehttp/guzzle": "^7.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Iahunter\\JuniperMist\\": "src/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "1.0.x-dev"
+    }
+  }
+}

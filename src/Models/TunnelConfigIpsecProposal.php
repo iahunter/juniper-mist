@@ -1,0 +1,22 @@
+<?php
+declare(strict_types=1);
+
+namespace Iahunter\JuniperMist\Models;
+
+use Iahunter\JuniperMist\Models\BaseModel;
+
+class TunnelConfigIpsecProposal extends BaseModel
+{
+    public $auth_algo;
+    public $dh_group;
+    public $enc_algo;
+
+    public function __construct(array $data = [])
+    {
+        foreach ($data as $k => $v) {
+            if (property_exists($this, $k)) {
+                $this->$k = $v;
+            }
+        }
+    }
+}
