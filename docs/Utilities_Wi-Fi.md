@@ -375,8 +375,8 @@ print_r($resp);
 {
   "from": "+185051234567",
   "to": "+19999999999",
-  "twilio_auth_token": "2135be04736a1a0a314bce432d61721a",
-  "twilio_sid": "AC5f4366878d193fb4865ab151739999eb"
+  "twilio_auth_token": "xxxxxxxxxxxxxxxxxx",
+  "twilio_sid": "xxxxxxxxxxxxxxxxxx"
 }
 ```
 
@@ -388,8 +388,8 @@ use Iahunter\JuniperMist\Models\TestTwilio;
 $model = new TestTwilio({
   "from": "+185051234567",
   "to": "+19999999999",
-  "twilio_auth_token": "2135be04736a1a0a314bce432d61721a",
-  "twilio_sid": "AC5f4366878d193fb4865ab151739999eb"
+  "twilio_auth_token": "xxxxxxxxxxxxxxxxxx",
+  "twilio_sid": "xxxxxxxxxxxxxxxxxx"
 });
 $resp = $client->utilities wi-fi->testSiteWlanTwilioSetup($model->toArray());
 print_r($resp);
