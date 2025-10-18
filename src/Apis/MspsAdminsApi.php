@@ -9,82 +9,86 @@ class MspsAdminsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listMspAdmins
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listMspAdmins(): array
     {
         $path = "/api/v1/msps/{msp_id}/admins";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * getMspAdmin
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getMspAdmin(): array
     {
         $path = "/api/v1/msps/{msp_id}/admins/{admin_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateMspAdmin
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateMspAdmin(array $body = []): array
     {
         $path = "/api/v1/msps/{msp_id}/admins/{admin_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * revokeMspAdmin
-     * @return array Decoded JSON response
+     * @return array
      */
     public function revokeMspAdmin(): array
     {
         $path = "/api/v1/msps/{msp_id}/admins/{admin_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * inviteMspAdmin
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function inviteMspAdmin(array $body = []): array
     {
         $path = "/api/v1/msps/{msp_id}/invites";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * updateMspAdminInvite
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateMspAdminInvite(array $body = []): array
     {
         $path = "/api/v1/msps/{msp_id}/invites/{invite_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * uninviteMspAdmin
-     * @return array Decoded JSON response
+     * @return array
      */
     public function uninviteMspAdmin(): array
     {
         $path = "/api/v1/msps/{msp_id}/invites/{invite_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
 }

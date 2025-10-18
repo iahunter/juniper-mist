@@ -5,18 +5,17 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model GatewayMgmtHostOutPolicySyslogServer
+ */
 class GatewayMgmtHostOutPolicySyslogServer extends BaseModel
 {
+    /** @var string */
     public string $host;
+    /** @var string */
     public string $path_preference;
+    /** @var string */
     public string $server_name;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

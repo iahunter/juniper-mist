@@ -9,31 +9,30 @@ class OrgsIntegrationJuniperApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * linkOrgToJuniperJuniperAccount
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function linkOrgToJuniperJuniperAccount(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/setting/juniper/link_accounts";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * unlinkOrgFromJuniperCustomerId
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function unlinkOrgFromJuniperCustomerId(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/setting/juniper/unlink_account";
-        return $this->http->request('DELETE', $path, null, $body);
+        $resp = $this->http->request('DELETE', $path, null, $body);
+        return $resp;
     }
 
 }

@@ -5,17 +5,15 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model StatsClusterConfigControlLinkInfo
+ */
 class StatsClusterConfigControlLinkInfo extends BaseModel
 {
+    /** @var string */
     public string $name;
+    /** @var string */
     public string $status;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

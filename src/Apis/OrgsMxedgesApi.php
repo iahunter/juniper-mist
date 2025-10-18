@@ -9,233 +9,251 @@ class OrgsMxedgesApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listOrgMxEdges
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listOrgMxEdges(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * createOrgMxEdge
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createOrgMxEdge(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * assignOrgMxEdgeToSite
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function assignOrgMxEdgeToSite(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/assign";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * claimOrgMxEdge
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function claimOrgMxEdge(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/claim";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * countOrgMxEdges
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countOrgMxEdges(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * countOrgSiteMxEdgeEvents
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countOrgSiteMxEdgeEvents(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/events/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * searchOrgMistEdgeEvents
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchOrgMistEdgeEvents(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/events/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * searchOrgMxEdges
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchOrgMxEdges(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * unassignOrgMxEdgeFromSite
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function unassignOrgMxEdgeFromSite(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/unassign";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * getOrgMxEdgeUpgradeInfo
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getOrgMxEdgeUpgradeInfo(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/version";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * getOrgMxEdge
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getOrgMxEdge(): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/{mxedge_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateOrgMxEdge
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateOrgMxEdge(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/{mxedge_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteOrgMxEdge
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteOrgMxEdge(): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/{mxedge_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * addOrgMxEdgeImage
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function addOrgMxEdgeImage(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/image/{image_number}";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteOrgMxEdgeImage
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteOrgMxEdgeImage(): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/image/{image_number}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * restartOrgMxEdge
-     * @return array Decoded JSON response
+     * @return array
      */
     public function restartOrgMxEdge(): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/restart";
-        return $this->http->request('POST', $path, null, null);
+        $resp = $this->http->request('POST', $path, null, null);
+        return $resp;
     }
 
     /**
      * bounceOrgMxEdgeDataPorts
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function bounceOrgMxEdgeDataPorts(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/services/tunterm/bounce_port";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * disconnectOrgMxEdgeTuntermAps
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function disconnectOrgMxEdgeTuntermAps(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/services/tunterm/disconnect_aps";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * controlOrgMxEdgeServices
-     * @return array Decoded JSON response
+     * @return array
      */
     public function controlOrgMxEdgeServices(): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/services/{name}/{action}";
-        return $this->http->request('POST', $path, null, null);
+        $resp = $this->http->request('POST', $path, null, null);
+        return $resp;
     }
 
     /**
      * uploadOrgMxEdgeSupportFiles
-     * @return array Decoded JSON response
+     * @return array
      */
     public function uploadOrgMxEdgeSupportFiles(): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/support";
-        return $this->http->request('POST', $path, null, null);
+        $resp = $this->http->request('POST', $path, null, null);
+        return $resp;
     }
 
     /**
      * unregisterOrgMxEdge
-     * @return array Decoded JSON response
+     * @return array
      */
     public function unregisterOrgMxEdge(): array
     {
         $path = "/api/v1/orgs/{org_id}/mxedges/{mxedge_id}/unregister";
-        return $this->http->request('POST', $path, null, null);
+        $resp = $this->http->request('POST', $path, null, null);
+        return $resp;
     }
 
 }

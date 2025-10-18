@@ -9,71 +9,74 @@ class SitesWxtagsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteWxTags
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteWxTags(): array
     {
         $path = "/api/v1/sites/{site_id}/wxtags";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * createSiteWxTag
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createSiteWxTag(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/wxtags";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * getSiteApplicationList
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteApplicationList(): array
     {
         $path = "/api/v1/sites/{site_id}/wxtags/apps";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * getSiteWxTag
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteWxTag(): array
     {
         $path = "/api/v1/sites/{site_id}/wxtags/{wxtag_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateSiteWxTag
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateSiteWxTag(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/wxtags/{wxtag_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteSiteWxTag
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteSiteWxTag(): array
     {
         $path = "/api/v1/sites/{site_id}/wxtags/{wxtag_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
 }

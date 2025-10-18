@@ -9,61 +9,63 @@ class SitesRssiZonesApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteRssiZones
-     * @return array Decoded JSON response
+     * @return \Iahunter\JuniperMist\Models\RssiZones
      */
-    public function listSiteRssiZones(): array
+    public function listSiteRssiZones(): \Iahunter\JuniperMist\Models\RssiZones
     {
         $path = "/api/v1/sites/{site_id}/rssizones";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return \Iahunter\JuniperMist\Models\RssiZones::fromArray($resp);
     }
 
     /**
      * createSiteRssiZone
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return \Iahunter\JuniperMist\Models\RssiZone
      */
-    public function createSiteRssiZone(array $body = []): array
+    public function createSiteRssiZone(array $body = []): \Iahunter\JuniperMist\Models\RssiZone
     {
         $path = "/api/v1/sites/{site_id}/rssizones";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return \Iahunter\JuniperMist\Models\RssiZone::fromArray($resp);
     }
 
     /**
      * getSiteRssiZone
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteRssiZone(): array
     {
         $path = "/api/v1/sites/{site_id}/rssizones/{rssizone_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateSiteRssiZone
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateSiteRssiZone(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/rssizones/{rssizone_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteSiteRssiZone
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteSiteRssiZone(): array
     {
         $path = "/api/v1/sites/{site_id}/rssizones/{rssizone_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
 }

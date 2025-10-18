@@ -9,19 +9,17 @@ class SitesIdpProfilesApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteIdpProfilesDerived
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteIdpProfilesDerived(): array
     {
         $path = "/api/v1/sites/{site_id}/idpprofiles/derived";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
 }

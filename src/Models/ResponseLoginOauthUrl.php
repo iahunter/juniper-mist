@@ -5,17 +5,15 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model ResponseLoginOauthUrl
+ */
 class ResponseLoginOauthUrl extends BaseModel
 {
+    /** @var string */
     public string $authorization_url;
+    /** @var string */
     public string $client_id;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

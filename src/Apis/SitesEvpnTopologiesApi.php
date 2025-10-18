@@ -9,61 +9,63 @@ class SitesEvpnTopologiesApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteEvpnTopologies
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteEvpnTopologies(): array
     {
         $path = "/api/v1/sites/{site_id}/evpn_topologies";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * createSiteEvpnTopology
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createSiteEvpnTopology(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/evpn_topologies";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * getSiteEvpnTopology
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteEvpnTopology(): array
     {
         $path = "/api/v1/sites/{site_id}/evpn_topologies/{evpn_topology_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateSiteEvpnTopology
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateSiteEvpnTopology(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/evpn_topologies/{evpn_topology_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteSiteEvpnTopology
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteSiteEvpnTopology(): array
     {
         $path = "/api/v1/sites/{site_id}/evpn_topologies/{evpn_topology_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
 }

@@ -9,50 +9,51 @@ class ConstantsModelsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * getGatewayDefaultConfig
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getGatewayDefaultConfig(array $query = []): array
     {
         $path = "/api/v1/const/default_gateway_config";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * listDeviceModels
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listDeviceModels(): array
     {
         $path = "/api/v1/const/device_models";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * listMxEdgeModels
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listMxEdgeModels(): array
     {
         $path = "/api/v1/const/mxedge_models";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * listSupportedOtherDeviceModels
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSupportedOtherDeviceModels(): array
     {
         $path = "/api/v1/const/otherdevice_models";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
 }

@@ -5,19 +5,19 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model StatsApEslStat
+ */
 class StatsApEslStat extends BaseModel
 {
+    /** @var integer */
     public int $channel;
+    /** @var boolean */
     public bool $connected;
+    /** @var string */
     public string $type;
+    /** @var boolean */
     public bool $up;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

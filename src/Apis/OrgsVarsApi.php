@@ -9,20 +9,18 @@ class OrgsVarsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * searchOrgVars
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchOrgVars(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/vars/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
 }

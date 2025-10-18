@@ -9,40 +9,40 @@ class OrgsNacCrlApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * getOrgNacCrl
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getOrgNacCrl(): array
     {
         $path = "/api/v1/orgs/{org_id}/setting/mist_nac_crls";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * importOrgNacCrl
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function importOrgNacCrl(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/setting/mist_nac_crls";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteOrgNacCrl
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteOrgNacCrl(): array
     {
         $path = "/api/v1/orgs/{org_id}/setting/mist_nac_crls/{naccrl_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
 }

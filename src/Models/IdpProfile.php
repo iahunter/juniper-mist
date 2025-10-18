@@ -5,22 +5,25 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model IdpProfile
+ */
 class IdpProfile extends BaseModel
 {
+    /** @var mixed */
     public $base_profile;
+    /** @var mixed */
     public $created_time;
+    /** @var mixed */
     public $id;
+    /** @var mixed */
     public $modified_time;
+    /** @var string */
     public string $name;
+    /** @var mixed */
     public $org_id;
+    /** @var mixed */
     public $overwrites;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

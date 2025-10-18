@@ -9,19 +9,17 @@ class SelfAlarmsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listAlarmSubscriptions
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listAlarmSubscriptions(): array
     {
         $path = "/api/v1/self/subscriptions";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
 }

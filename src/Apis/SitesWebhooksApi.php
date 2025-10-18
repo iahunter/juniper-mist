@@ -9,93 +9,98 @@ class SitesWebhooksApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteWebhooks
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteWebhooks(): array
     {
         $path = "/api/v1/sites/{site_id}/webhooks";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * createSiteWebhook
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createSiteWebhook(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/webhooks";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * getSiteWebhook
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteWebhook(): array
     {
         $path = "/api/v1/sites/{site_id}/webhooks/{webhook_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateSiteWebhook
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateSiteWebhook(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/webhooks/{webhook_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteSiteWebhook
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteSiteWebhook(): array
     {
         $path = "/api/v1/sites/{site_id}/webhooks/{webhook_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * countSiteWebhooksDeliveries
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countSiteWebhooksDeliveries(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/webhooks/{webhook_id}/events/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * searchSiteWebhooksDeliveries
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchSiteWebhooksDeliveries(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/webhooks/{webhook_id}/events/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * pingSiteWebhook
-     * @return array Decoded JSON response
+     * @return array
      */
     public function pingSiteWebhook(): array
     {
         $path = "/api/v1/sites/{site_id}/webhooks/{webhook_id}/ping";
-        return $this->http->request('POST', $path, null, null);
+        $resp = $this->http->request('POST', $path, null, null);
+        return $resp;
     }
 
 }

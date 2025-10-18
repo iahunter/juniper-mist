@@ -5,17 +5,15 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model MxedgeTuntermMulticastConfig
+ */
 class MxedgeTuntermMulticastConfig extends BaseModel
 {
+    /** @var mixed */
     public $mdns;
+    /** @var mixed */
     public $ssdp;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

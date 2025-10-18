@@ -9,20 +9,18 @@ class UtilitiesLocationApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * sendSiteDevicesArbitraryBleBeacon
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function sendSiteDevicesArbitraryBleBeacon(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/devices/send_ble_beacon";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
 }

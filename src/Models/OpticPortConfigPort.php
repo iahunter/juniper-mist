@@ -5,17 +5,15 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model OpticPortConfigPort
+ */
 class OpticPortConfigPort extends BaseModel
 {
+    /** @var boolean */
     public bool $channelized;
+    /** @var string */
     public string $speed;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

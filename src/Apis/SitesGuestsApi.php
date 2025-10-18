@@ -9,84 +9,88 @@ class SitesGuestsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteAllGuestAuthorizations
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteAllGuestAuthorizations(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/guests";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * countSiteGuestAuthorizations
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countSiteGuestAuthorizations(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/guests/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * listSiteAllGuestAuthorizationsDerived
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteAllGuestAuthorizationsDerived(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/guests/derived";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * searchSiteGuestAuthorization
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchSiteGuestAuthorization(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/guests/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * getSiteGuestAuthorization
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteGuestAuthorization(): array
     {
         $path = "/api/v1/sites/{site_id}/guests/{guest_mac}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateSiteGuestAuthorization
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateSiteGuestAuthorization(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/guests/{guest_mac}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteSiteGuestAuthorization
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteSiteGuestAuthorization(): array
     {
         $path = "/api/v1/sites/{site_id}/guests/{guest_mac}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
 }

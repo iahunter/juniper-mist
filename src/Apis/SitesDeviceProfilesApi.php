@@ -9,20 +9,18 @@ class SitesDeviceProfilesApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteDeviceProfilesDerived
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteDeviceProfilesDerived(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/deviceprofiles/derived";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
 }

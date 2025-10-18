@@ -9,20 +9,18 @@ class SitesServicePoliciesApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteServicePoliciesDerived
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteServicePoliciesDerived(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/servicepolicies/derived";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
 }

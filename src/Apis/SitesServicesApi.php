@@ -9,42 +9,42 @@ class SitesServicesApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteServicesDerived
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteServicesDerived(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/services/derived";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * countSiteServicePathEvents
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countSiteServicePathEvents(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/services/events/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * searchSiteServicePathEvents
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchSiteServicePathEvents(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/services/events/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
 }

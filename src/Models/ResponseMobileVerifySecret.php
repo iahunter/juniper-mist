@@ -5,18 +5,17 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model ResponseMobileVerifySecret
+ */
 class ResponseMobileVerifySecret extends BaseModel
 {
+    /** @var string */
     public string $name;
+    /** @var mixed */
     public $org_id;
+    /** @var string */
     public string $secret;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

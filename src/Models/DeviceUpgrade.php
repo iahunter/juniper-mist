@@ -5,20 +5,21 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model DeviceUpgrade
+ */
 class DeviceUpgrade extends BaseModel
 {
+    /** @var boolean */
     public bool $reboot;
+    /** @var integer */
     public int $reboot_at;
+    /** @var boolean */
     public bool $snapshot;
+    /** @var integer */
     public int $start_time;
+    /** @var string */
     public string $version;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

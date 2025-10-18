@@ -9,19 +9,17 @@ class MspsInventoryApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * getMspInventoryByMac
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getMspInventoryByMac(): array
     {
         $path = "/api/v1/msps/{msp_id}/inventory/{device_mac}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
 }

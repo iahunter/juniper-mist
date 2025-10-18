@@ -5,19 +5,19 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model ResponseSsrUpgradeCounts
+ */
 class ResponseSsrUpgradeCounts extends BaseModel
 {
+    /** @var integer */
     public int $failed;
+    /** @var integer */
     public int $queued;
+    /** @var integer */
     public int $success;
+    /** @var integer */
     public int $upgrading;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

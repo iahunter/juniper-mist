@@ -5,21 +5,23 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model ResponseZoneSearch
+ */
 class ResponseZoneSearch extends BaseModel
 {
+    /** @var number */
     public float $end;
+    /** @var integer */
     public int $limit;
+    /** @var string */
     public string $next;
+    /** @var mixed */
     public $results;
+    /** @var number */
     public float $start;
+    /** @var integer */
     public int $total;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

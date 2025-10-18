@@ -9,31 +9,30 @@ class MspsLogsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listMspAuditLogs
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listMspAuditLogs(array $query = []): array
     {
         $path = "/api/v1/msps/{msp_id}/logs";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * countMspAuditLogs
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countMspAuditLogs(array $query = []): array
     {
         $path = "/api/v1/msps/{msp_id}/logs/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
 }

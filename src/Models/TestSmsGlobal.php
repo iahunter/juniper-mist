@@ -5,18 +5,17 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model TestSmsGlobal
+ */
 class TestSmsGlobal extends BaseModel
 {
+    /** @var string */
     public string $smsglobal_api_key;
+    /** @var string */
     public string $smsglobal_api_secret;
+    /** @var string */
     public string $to;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

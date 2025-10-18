@@ -5,18 +5,17 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model MapNode
+ */
 class MapNode extends BaseModel
 {
-    public array $edges;
+    /** @var object */
+    public $edges;
+    /** @var string */
     public string $name;
+    /** @var mixed */
     public $position;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

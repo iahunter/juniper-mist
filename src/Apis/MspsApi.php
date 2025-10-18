@@ -9,62 +9,64 @@ class MspsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * createMsp
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createMsp(array $body = []): array
     {
         $path = "/api/v1/msps";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * getMspDetails
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getMspDetails(): array
     {
         $path = "/api/v1/msps/{msp_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateMsp
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateMsp(array $body = []): array
     {
         $path = "/api/v1/msps/{msp_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteMsp
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteMsp(): array
     {
         $path = "/api/v1/msps/{msp_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * searchMspOrgGroup
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchMspOrgGroup(array $query = []): array
     {
         $path = "/api/v1/msps/{msp_id}/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
 }

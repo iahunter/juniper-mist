@@ -5,19 +5,19 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model StatsDeviceOtherConnectedDevice
+ */
 class StatsDeviceOtherConnectedDevice extends BaseModel
 {
+    /** @var string */
     public string $mac;
+    /** @var string */
     public string $name;
+    /** @var string */
     public string $port_id;
+    /** @var string */
     public string $type;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

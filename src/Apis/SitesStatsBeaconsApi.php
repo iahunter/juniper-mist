@@ -9,19 +9,17 @@ class SitesStatsBeaconsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteBeaconsStats
-     * @return array Decoded JSON response
+     * @return \Iahunter\JuniperMist\Models\StatsBeacons
      */
-    public function listSiteBeaconsStats(): array
+    public function listSiteBeaconsStats(): \Iahunter\JuniperMist\Models\StatsBeacons
     {
         $path = "/api/v1/sites/{site_id}/stats/beacons";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return \Iahunter\JuniperMist\Models\StatsBeacons::fromArray($resp);
     }
 
 }

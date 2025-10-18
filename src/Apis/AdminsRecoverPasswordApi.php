@@ -9,30 +9,29 @@ class AdminsRecoverPasswordApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * recoverPassword
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function recoverPassword(array $body = []): array
     {
         $path = "/api/v1/recover";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * verifyRecoverPassword
-     * @return array Decoded JSON response
+     * @return array
      */
     public function verifyRecoverPassword(): array
     {
         $path = "/api/v1/recover/verify/{token}";
-        return $this->http->request('POST', $path, null, null);
+        $resp = $this->http->request('POST', $path, null, null);
+        return $resp;
     }
 
 }

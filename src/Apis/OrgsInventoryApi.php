@@ -9,107 +9,113 @@ class OrgsInventoryApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * getOrgInventory
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getOrgInventory(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/inventory";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * addOrgInventory
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function addOrgInventory(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/inventory";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * updateOrgInventoryAssignment
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateOrgInventoryAssignment(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/inventory";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * countOrgInventory
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countOrgInventory(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/inventory/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * createOrgGatewayHaCluster
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createOrgGatewayHaCluster(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/inventory/create_ha_cluster";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteOrgGatewayHaCluster
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteOrgGatewayHaCluster(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/inventory/delete_ha_cluster";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * reevaluateOrgAutoAssignment
-     * @return array Decoded JSON response
+     * @return array
      */
     public function reevaluateOrgAutoAssignment(): array
     {
         $path = "/api/v1/orgs/{org_id}/inventory/reevaluate_auto_assignment";
-        return $this->http->request('POST', $path, null, null);
+        $resp = $this->http->request('POST', $path, null, null);
+        return $resp;
     }
 
     /**
      * replaceOrgDevices
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function replaceOrgDevices(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/inventory/replace";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * searchOrgInventory
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchOrgInventory(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/inventory/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
 }

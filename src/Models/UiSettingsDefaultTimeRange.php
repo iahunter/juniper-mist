@@ -5,22 +5,25 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model UiSettingsDefaultTimeRange
+ */
 class UiSettingsDefaultTimeRange extends BaseModel
 {
+    /** @var integer */
     public int $end;
+    /** @var string */
     public string $endDate;
+    /** @var string */
     public string $interval;
+    /** @var string */
     public string $name;
+    /** @var string */
     public string $shortName;
+    /** @var integer */
     public int $start;
+    /** @var boolean */
     public bool $usePreset;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

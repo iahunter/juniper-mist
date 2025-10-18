@@ -9,31 +9,30 @@ class SitesSkyatpApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * countSiteSkyatpEvents
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countSiteSkyatpEvents(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/skyatp/events/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * searchSiteSkyatpEvents
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchSiteSkyatpEvents(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/skyatp/events/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
 }

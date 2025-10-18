@@ -5,22 +5,25 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model WiredClientResponseDeviceMacPortItem
+ */
 class WiredClientResponseDeviceMacPortItem extends BaseModel
 {
+    /** @var string */
     public string $device_mac;
+    /** @var string */
     public string $ip;
+    /** @var string */
     public string $port_id;
+    /** @var string */
     public string $port_parent;
+    /** @var string */
     public string $start;
+    /** @var integer */
     public int $vlan;
+    /** @var string */
     public string $when;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

@@ -9,51 +9,52 @@ class AdminsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * verifyAdminInvite
-     * @return array Decoded JSON response
+     * @return array
      */
     public function verifyAdminInvite(): array
     {
         $path = "/api/v1/invite/verify/{token}";
-        return $this->http->request('POST', $path, null, null);
+        $resp = $this->http->request('POST', $path, null, null);
+        return $resp;
     }
 
     /**
      * registerNewAdmin
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function registerNewAdmin(array $body = []): array
     {
         $path = "/api/v1/register";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * getAdminRegistrationInfo
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getAdminRegistrationInfo(array $query = []): array
     {
         $path = "/api/v1/register/recaptcha";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * verifyRegistration
-     * @return array Decoded JSON response
+     * @return array
      */
     public function verifyRegistration(): array
     {
         $path = "/api/v1/register/verify/{token}";
-        return $this->http->request('POST', $path, null, null);
+        $resp = $this->http->request('POST', $path, null, null);
+        return $resp;
     }
 
 }

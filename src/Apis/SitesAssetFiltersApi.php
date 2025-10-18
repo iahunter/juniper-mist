@@ -9,61 +9,63 @@ class SitesAssetFiltersApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteAssetFilters
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteAssetFilters(): array
     {
         $path = "/api/v1/sites/{site_id}/assetfilters";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * createSiteAssetFilter
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createSiteAssetFilter(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/assetfilters";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * getSiteAssetFilter
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteAssetFilter(): array
     {
         $path = "/api/v1/sites/{site_id}/assetfilters/{assetfilter_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateSiteAssetFilter
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateSiteAssetFilter(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/assetfilters/{assetfilter_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteSiteAssetFilter
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteSiteAssetFilter(): array
     {
         $path = "/api/v1/sites/{site_id}/assetfilters/{assetfilter_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
 }

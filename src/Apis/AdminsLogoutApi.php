@@ -9,19 +9,17 @@ class AdminsLogoutApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * logout
-     * @return array Decoded JSON response
+     * @return array
      */
     public function logout(): array
     {
         $path = "/api/v1/logout";
-        return $this->http->request('POST', $path, null, null);
+        $resp = $this->http->request('POST', $path, null, null);
+        return $resp;
     }
 
 }

@@ -9,171 +9,184 @@ class ConstantsDefinitionsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listApChannels
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listApChannels(): array
     {
         $path = "/api/v1/const/ap_channels";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * listApLEslVersions
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listApLEslVersions(): array
     {
         $path = "/api/v1/const/ap_esl_versions";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * listApLedDefinition
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listApLedDefinition(): array
     {
         $path = "/api/v1/const/ap_led_status";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * listAppCategoryDefinitions
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listAppCategoryDefinitions(): array
     {
         $path = "/api/v1/const/app_categories";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * listAppSubCategoryDefinitions
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listAppSubCategoryDefinitions(): array
     {
         $path = "/api/v1/const/app_subcategories";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * listApplications
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listApplications(): array
     {
         $path = "/api/v1/const/applications";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * listCountryCodes
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listCountryCodes(array $query = []): array
     {
         $path = "/api/v1/const/countries";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * listFingerprintTypes
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listFingerprintTypes(): array
     {
         $path = "/api/v1/const/fingerprint_types";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * listGatewayApplications
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listGatewayApplications(): array
     {
         $path = "/api/v1/const/gateway_applications";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * listInsightMetrics
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listInsightMetrics(): array
     {
         $path = "/api/v1/const/insight_metrics";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * listSiteLanguages
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteLanguages(): array
     {
         $path = "/api/v1/const/languages";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * listLicenseTypes
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listLicenseTypes(): array
     {
         $path = "/api/v1/const/license_types";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * listMarvisClientVersions
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listMarvisClientVersions(): array
     {
         $path = "/api/v1/const/marvisclient_versions";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * listStates
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listStates(array $query = []): array
     {
         $path = "/api/v1/const/states";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * listTrafficTypes
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listTrafficTypes(): array
     {
         $path = "/api/v1/const/traffic_types";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * listWebhookTopics
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listWebhookTopics(): array
     {
         $path = "/api/v1/const/webhook_topics";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
 }

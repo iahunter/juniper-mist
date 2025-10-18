@@ -5,19 +5,19 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model UpgradeBiosMulti
+ */
 class UpgradeBiosMulti extends BaseModel
 {
+    /** @var mixed */
     public $device_ids;
+    /** @var mixed */
     public $models;
+    /** @var boolean */
     public bool $reboot;
+    /** @var string */
     public string $version;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

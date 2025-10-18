@@ -9,31 +9,30 @@ class OrgsSlesApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * getOrgSitesSle
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getOrgSitesSle(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/insights/sites-sle";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * getOrgSle
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getOrgSle(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/insights/{metric}";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
 }

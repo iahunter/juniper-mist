@@ -9,123 +9,131 @@ class OrgsNacPortalsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listOrgNacPortals
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listOrgNacPortals(): array
     {
         $path = "/api/v1/orgs/{org_id}/nacportals";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * createOrgNacPortal
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createOrgNacPortal(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/nacportals";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * getOrgNacPortal
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getOrgNacPortal(): array
     {
         $path = "/api/v1/orgs/{org_id}/nacportals/{nacportal_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateOrgNacPortal
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateOrgNacPortal(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/nacportals/{nacportal_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteOrgNacPortal
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteOrgNacPortal(): array
     {
         $path = "/api/v1/orgs/{org_id}/nacportals/{nacportal_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * listOrgNacPortalSsoLatestFailures
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listOrgNacPortalSsoLatestFailures(): array
     {
         $path = "/api/v1/orgs/{org_id}/nacportals/{nacportal_id}/failures";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * uploadOrgNacPortalImage
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function uploadOrgNacPortalImage(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/nacportals/{nacportal_id}/portal_image";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteOrgNacPortalImage
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteOrgNacPortalImage(): array
     {
         $path = "/api/v1/orgs/{org_id}/nacportals/{nacportal_id}/portal_image";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateOrgNacPortalTemplate
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateOrgNacPortalTemplate(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/nacportals/{nacportal_id}/portal_template";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * getOrgNacPortalSamlMetadata
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getOrgNacPortalSamlMetadata(): array
     {
         $path = "/api/v1/orgs/{org_id}/nacportals/{nacportal_id}/saml_metadata";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * downloadOrgNacPortalSamlMetadata
-     * @return array Decoded JSON response
+     * @return array
      */
     public function downloadOrgNacPortalSamlMetadata(): array
     {
         $path = "/api/v1/orgs/{org_id}/nacportals/{nacportal_id}/saml_metadata.xml";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
 }

@@ -9,61 +9,63 @@ class OrgsNetworksApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listOrgNetworks
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listOrgNetworks(): array
     {
         $path = "/api/v1/orgs/{org_id}/networks";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * createOrgNetwork
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createOrgNetwork(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/networks";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * getOrgNetwork
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getOrgNetwork(): array
     {
         $path = "/api/v1/orgs/{org_id}/networks/{network_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateOrgNetwork
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateOrgNetwork(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/networks/{network_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteOrgNetwork
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteOrgNetwork(): array
     {
         $path = "/api/v1/orgs/{org_id}/networks/{network_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
 }

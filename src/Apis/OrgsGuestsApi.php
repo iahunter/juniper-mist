@@ -9,72 +9,75 @@ class OrgsGuestsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listOrgGuestAuthorizations
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listOrgGuestAuthorizations(): array
     {
         $path = "/api/v1/orgs/{org_id}/guests";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * countOrgGuestAuthorizations
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countOrgGuestAuthorizations(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/guests/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * searchOrgGuestAuthorization
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchOrgGuestAuthorization(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/guests/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * getOrgGuestAuthorization
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getOrgGuestAuthorization(): array
     {
         $path = "/api/v1/orgs/{org_id}/guests/{guest_mac}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateOrgGuestAuthorization
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateOrgGuestAuthorization(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/guests/{guest_mac}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteOrgGuestAuthorization
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteOrgGuestAuthorization(): array
     {
         $path = "/api/v1/orgs/{org_id}/guests/{guest_mac}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
 }

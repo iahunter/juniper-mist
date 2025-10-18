@@ -9,93 +9,98 @@ class SitesLocationApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * getSiteBeamCoverageOverview
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteBeamCoverageOverview(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/location/coverage";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * getSiteMachineLearningCurrentStat
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteMachineLearningCurrentStat(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/location/ml/current";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * getSiteDefaultPlfForModels
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteDefaultPlfForModels(): array
     {
         $path = "/api/v1/sites/{site_id}/location/ml/defaults";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * overwriteSiteMlForDevice
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function overwriteSiteMlForDevice(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/location/ml/device/{device_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * clearSiteMlOverwriteForDevice
-     * @return array Decoded JSON response
+     * @return array
      */
     public function clearSiteMlOverwriteForDevice(): array
     {
         $path = "/api/v1/sites/{site_id}/location/ml/device/{device_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * overwriteSiteMlForMap
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function overwriteSiteMlForMap(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/location/ml/map/{map_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * clearSiteMlOverwriteForMap
-     * @return array Decoded JSON response
+     * @return array
      */
     public function clearSiteMlOverwriteForMap(): array
     {
         $path = "/api/v1/sites/{site_id}/location/ml/map/{map_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * resetSiteMlStatsByMap
-     * @return array Decoded JSON response
+     * @return array
      */
     public function resetSiteMlStatsByMap(): array
     {
         $path = "/api/v1/sites/{site_id}/location/ml/reset/map/{map_id}";
-        return $this->http->request('POST', $path, null, null);
+        $resp = $this->http->request('POST', $path, null, null);
+        return $resp;
     }
 
 }

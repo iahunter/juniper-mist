@@ -9,103 +9,109 @@ class SitesSettingApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * getSiteSetting
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteSetting(): array
     {
         $path = "/api/v1/sites/{site_id}/setting";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateSiteSettings
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateSiteSettings(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/setting";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * createSiteWirelessClientsBlocklist
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createSiteWirelessClientsBlocklist(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/setting/blacklist";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteSiteWirelessClientsBlocklist
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteSiteWirelessClientsBlocklist(): array
     {
         $path = "/api/v1/sites/{site_id}/setting/blacklist";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * getSiteSettingDerived
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteSettingDerived(): array
     {
         $path = "/api/v1/sites/{site_id}/setting/derived";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * createSiteWatchedStations
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createSiteWatchedStations(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/setting/watched_station";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteSiteWatchedStations
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteSiteWatchedStations(): array
     {
         $path = "/api/v1/sites/{site_id}/setting/watched_station";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * createSiteWirelessClientsAllowlist
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createSiteWirelessClientsAllowlist(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/setting/whitelist";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteSiteWirelessClientsAllowlist
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteSiteWirelessClientsAllowlist(): array
     {
         $path = "/api/v1/sites/{site_id}/setting/whitelist";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
 }

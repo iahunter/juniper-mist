@@ -5,21 +5,23 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model SleClassifier
+ */
 class SleClassifier extends BaseModel
 {
+    /** @var mixed */
     public $impact;
+    /** @var number */
     public float $interval;
+    /** @var string */
     public string $name;
+    /** @var mixed */
     public $samples;
+    /** @var string */
     public string $x_label;
+    /** @var string */
     public string $y_label;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

@@ -5,18 +5,17 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model WlanAppLimit
+ */
 class WlanAppLimit extends BaseModel
 {
-    public array $apps;
+    /** @var object */
+    public $apps;
+    /** @var boolean */
     public bool $enabled;
-    public array $wxtag_ids;
+    /** @var object */
+    public $wxtag_ids;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

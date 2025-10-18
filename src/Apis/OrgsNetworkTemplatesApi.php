@@ -9,61 +9,63 @@ class OrgsNetworkTemplatesApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listOrgNetworkTemplates
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listOrgNetworkTemplates(): array
     {
         $path = "/api/v1/orgs/{org_id}/networktemplates";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * createOrgNetworkTemplate
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createOrgNetworkTemplate(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/networktemplates";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * getOrgNetworkTemplate
-     * @return array Decoded JSON response
+     * @return \Iahunter\JuniperMist\Models\NetworkTemplate
      */
-    public function getOrgNetworkTemplate(): array
+    public function getOrgNetworkTemplate(): \Iahunter\JuniperMist\Models\NetworkTemplate
     {
         $path = "/api/v1/orgs/{org_id}/networktemplates/{networktemplate_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return \Iahunter\JuniperMist\Models\NetworkTemplate::fromArray($resp);
     }
 
     /**
      * updateOrgNetworkTemplate
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return \Iahunter\JuniperMist\Models\NetworkTemplate
      */
-    public function updateOrgNetworkTemplate(array $body = []): array
+    public function updateOrgNetworkTemplate(array $body = []): \Iahunter\JuniperMist\Models\NetworkTemplate
     {
         $path = "/api/v1/orgs/{org_id}/networktemplates/{networktemplate_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return \Iahunter\JuniperMist\Models\NetworkTemplate::fromArray($resp);
     }
 
     /**
      * deleteOrgNetworkTemplate
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteOrgNetworkTemplate(): array
     {
         $path = "/api/v1/orgs/{org_id}/networktemplates/{networktemplate_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
 }

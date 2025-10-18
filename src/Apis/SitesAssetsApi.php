@@ -9,73 +9,76 @@ class SitesAssetsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteAssets
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteAssets(): array
     {
         $path = "/api/v1/sites/{site_id}/assets";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * createSiteAsset
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createSiteAsset(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/assets";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * importSiteAssets
      * @param array $query Query params
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function importSiteAssets(array $query = [], array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/assets/import";
-        return $this->http->request('POST', $path, $query, $body);
+        $resp = $this->http->request('POST', $path, $query, $body);
+        return $resp;
     }
 
     /**
      * getSiteAsset
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteAsset(): array
     {
         $path = "/api/v1/sites/{site_id}/assets/{asset_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateSiteAsset
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateSiteAsset(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/assets/{asset_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteSiteAsset
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteSiteAsset(): array
     {
         $path = "/api/v1/sites/{site_id}/assets/{asset_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
 }

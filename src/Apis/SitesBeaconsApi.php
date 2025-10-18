@@ -9,61 +9,63 @@ class SitesBeaconsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteBeacons
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteBeacons(): array
     {
         $path = "/api/v1/sites/{site_id}/beacons";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * createSiteBeacon
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createSiteBeacon(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/beacons";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * getSiteBeacon
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteBeacon(): array
     {
         $path = "/api/v1/sites/{site_id}/beacons/{beacon_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateSiteBeacon
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateSiteBeacon(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/beacons/{beacon_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteSiteBeacon
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteSiteBeacon(): array
     {
         $path = "/api/v1/sites/{site_id}/beacons/{beacon_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
 }

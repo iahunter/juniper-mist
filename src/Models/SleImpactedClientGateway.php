@@ -5,19 +5,19 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model SleImpactedClientGateway
+ */
 class SleImpactedClientGateway extends BaseModel
 {
+    /** @var string */
     public string $chassis_mac;
+    /** @var string */
     public string $gateway_mac;
+    /** @var string */
     public string $gateway_name;
+    /** @var mixed */
     public $interfaces;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

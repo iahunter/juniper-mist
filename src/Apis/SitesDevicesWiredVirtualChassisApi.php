@@ -9,72 +9,75 @@ class SitesDevicesWiredVirtualChassisApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * getSiteDeviceVirtualChassis
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteDeviceVirtualChassis(): array
     {
         $path = "/api/v1/sites/{site_id}/devices/{device_id}/vc";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * createSiteVirtualChassis
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createSiteVirtualChassis(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/devices/{device_id}/vc";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * updateSiteVirtualChassisMember
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateSiteVirtualChassisMember(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/devices/{device_id}/vc";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteSiteVirtualChassis
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteSiteVirtualChassis(): array
     {
         $path = "/api/v1/sites/{site_id}/devices/{device_id}/vc";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * convertSiteVirtualChassisToVirtualMac
-     * @return array Decoded JSON response
+     * @return array
      */
     public function convertSiteVirtualChassisToVirtualMac(): array
     {
         $path = "/api/v1/sites/{site_id}/devices/{device_id}/vc/convert_to_virtualmac";
-        return $this->http->request('POST', $path, null, null);
+        $resp = $this->http->request('POST', $path, null, null);
+        return $resp;
     }
 
     /**
      * setSiteVcPort
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function setSiteVcPort(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/devices/{device_id}/vc/vc_port";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
 }

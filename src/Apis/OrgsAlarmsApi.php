@@ -9,106 +9,112 @@ class OrgsAlarmsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * ackOrgMultipleAlarms
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function ackOrgMultipleAlarms(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/alarms/ack";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * ackOrgAllAlarms
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function ackOrgAllAlarms(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/alarms/ack_all";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * countOrgAlarms
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countOrgAlarms(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/alarms/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * searchOrgAlarms
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchOrgAlarms(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/alarms/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * unackOrgMultipleAlarms
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function unackOrgMultipleAlarms(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/alarms/unack";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * unackOrgAllAlarms
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function unackOrgAllAlarms(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/alarms/unack_all";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * ackOrgAlarm
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function ackOrgAlarm(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/alarms/{alarm_id}/ack";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * subscribeOrgAlarmsReports
-     * @return array Decoded JSON response
+     * @return array
      */
     public function subscribeOrgAlarmsReports(): array
     {
         $path = "/api/v1/orgs/{org_id}/subscriptions";
-        return $this->http->request('POST', $path, null, null);
+        $resp = $this->http->request('POST', $path, null, null);
+        return $resp;
     }
 
     /**
      * unsubscribeOrgAlarmsReports
-     * @return array Decoded JSON response
+     * @return array
      */
     public function unsubscribeOrgAlarmsReports(): array
     {
         $path = "/api/v1/orgs/{org_id}/subscriptions";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
 }

@@ -9,20 +9,18 @@ class SitesNetworkTemplatesApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteNetworkTemplatesDerived
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteNetworkTemplatesDerived(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/networktemplates/derived";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
 }

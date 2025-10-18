@@ -9,20 +9,18 @@ class OrgsNacIdpApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * validateOrgIdpCredential
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function validateOrgIdpCredential(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/mist_nac/test_idp";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
 }

@@ -9,31 +9,30 @@ class SitesWanUsagesApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * countSiteWanUsage
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countSiteWanUsage(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/wan_usages/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * searchSiteWanUsage
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchSiteWanUsage(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/wan_usages/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
 }

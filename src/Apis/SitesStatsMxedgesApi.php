@@ -9,29 +9,28 @@ class SitesStatsMxedgesApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteMxEdgesStats
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteMxEdgesStats(): array
     {
         $path = "/api/v1/sites/{site_id}/stats/mxedges";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * getSiteMxEdgeStats
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteMxEdgeStats(): array
     {
         $path = "/api/v1/sites/{site_id}/stats/mxedges/{mxedge_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
 }

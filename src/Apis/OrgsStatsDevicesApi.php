@@ -9,20 +9,18 @@ class OrgsStatsDevicesApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listOrgDevicesStats
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listOrgDevicesStats(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/stats/devices";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
 }

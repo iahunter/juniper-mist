@@ -9,93 +9,98 @@ class OrgsAlarmTemplatesApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listOrgAlarmTemplates
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listOrgAlarmTemplates(): array
     {
         $path = "/api/v1/orgs/{org_id}/alarmtemplates";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * createOrgAlarmTemplate
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createOrgAlarmTemplate(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/alarmtemplates";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * listOrgSuppressedAlarms
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listOrgSuppressedAlarms(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/alarmtemplates/suppress";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * suppressOrgAlarm
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function suppressOrgAlarm(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/alarmtemplates/suppress";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * unsuppressOrgSuppressedAlarms
-     * @return array Decoded JSON response
+     * @return array
      */
     public function unsuppressOrgSuppressedAlarms(): array
     {
         $path = "/api/v1/orgs/{org_id}/alarmtemplates/suppress";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * getOrgAlarmTemplate
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getOrgAlarmTemplate(): array
     {
         $path = "/api/v1/orgs/{org_id}/alarmtemplates/{alarmtemplate_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateOrgAlarmTemplate
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateOrgAlarmTemplate(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/alarmtemplates/{alarmtemplate_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteOrgAlarmTemplate
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteOrgAlarmTemplate(): array
     {
         $path = "/api/v1/orgs/{org_id}/alarmtemplates/{alarmtemplate_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
 }

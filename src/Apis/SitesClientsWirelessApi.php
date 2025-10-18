@@ -9,86 +9,90 @@ class SitesClientsWirelessApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * countSiteWirelessClients
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countSiteWirelessClients(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/clients/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * countSiteWirelessClientEvents
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countSiteWirelessClientEvents(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/clients/events/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * searchSiteWirelessClientEvents
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchSiteWirelessClientEvents(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/clients/events/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * searchSiteWirelessClients
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchSiteWirelessClients(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/clients/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * countSiteWirelessClientSessions
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countSiteWirelessClientSessions(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/clients/sessions/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * searchSiteWirelessClientSessions
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchSiteWirelessClientSessions(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/clients/sessions/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * getSiteEventsForClient
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteEventsForClient(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/clients/{client_mac}/events";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
 }

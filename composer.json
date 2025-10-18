@@ -11,10 +11,5 @@
     "psr-4": {
       "Iahunter\\JuniperMist\\": "src/"
     }
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-main": "1.0.x-dev"
-    }
   }
 }

@@ -9,19 +9,17 @@ class OrgsStatsOtherDevicesApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * getOrgOtherDeviceStats
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getOrgOtherDeviceStats(): array
     {
         $path = "/api/v1/orgs/{org_id}/stats/otherdevices/{device_mac}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
 }

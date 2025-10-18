@@ -9,31 +9,30 @@ class AdminsLoginApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * login
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function login(array $body = []): array
     {
         $path = "/api/v1/login";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * twoFactor
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function twoFactor(array $body = []): array
     {
         $path = "/api/v1/login/two_factor";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
 }

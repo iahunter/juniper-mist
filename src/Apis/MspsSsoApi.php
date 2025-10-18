@@ -9,91 +9,96 @@ class MspsSsoApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listMspSsos
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listMspSsos(): array
     {
         $path = "/api/v1/msps/{msp_id}/ssos";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * createMspSso
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createMspSso(array $body = []): array
     {
         $path = "/api/v1/msps/{msp_id}/ssos";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * getMspSso
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getMspSso(): array
     {
         $path = "/api/v1/msps/{msp_id}/ssos/{sso_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateMspSso
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateMspSso(array $body = []): array
     {
         $path = "/api/v1/msps/{msp_id}/ssos/{sso_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteMspSso
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteMspSso(): array
     {
         $path = "/api/v1/msps/{msp_id}/ssos/{sso_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * listMspSsoLatestFailures
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listMspSsoLatestFailures(): array
     {
         $path = "/api/v1/msps/{msp_id}/ssos/{sso_id}/failures";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * getMspSamlMetadata
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getMspSamlMetadata(): array
     {
         $path = "/api/v1/msps/{msp_id}/ssos/{sso_id}/metadata";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * downloadMspSamlMetadata
-     * @return array Decoded JSON response
+     * @return array
      */
     public function downloadMspSamlMetadata(): array
     {
         $path = "/api/v1/msps/{msp_id}/ssos/{sso_id}/metadata.xml";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
 }

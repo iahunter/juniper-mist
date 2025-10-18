@@ -9,39 +9,39 @@ class SitesAnomalyApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * getSiteAnomalyEventsForClient
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteAnomalyEventsForClient(): array
     {
         $path = "/api/v1/sites/{site_id}/anomaly/client/{client_mac}/{metric}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * getSiteAnomalyEventsForDevice
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteAnomalyEventsForDevice(): array
     {
         $path = "/api/v1/sites/{site_id}/anomaly/device/{device_mac}/{metric}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * listSiteAnomalyEvents
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteAnomalyEvents(): array
     {
         $path = "/api/v1/sites/{site_id}/anomaly/{metric}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
 }

@@ -9,91 +9,96 @@ class OrgsSsoApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listOrgSsos
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listOrgSsos(): array
     {
         $path = "/api/v1/orgs/{org_id}/ssos";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * createOrgSso
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createOrgSso(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/ssos";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * getOrgSso
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getOrgSso(): array
     {
         $path = "/api/v1/orgs/{org_id}/ssos/{sso_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateOrgSso
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateOrgSso(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/ssos/{sso_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteOrgSso
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteOrgSso(): array
     {
         $path = "/api/v1/orgs/{org_id}/ssos/{sso_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * listOrgSsoLatestFailures
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listOrgSsoLatestFailures(): array
     {
         $path = "/api/v1/orgs/{org_id}/ssos/{sso_id}/failures";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * getOrgSamlMetadata
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getOrgSamlMetadata(): array
     {
         $path = "/api/v1/orgs/{org_id}/ssos/{sso_id}/metadata";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * downloadOrgSamlMetadata
-     * @return array Decoded JSON response
+     * @return array
      */
     public function downloadOrgSamlMetadata(): array
     {
         $path = "/api/v1/orgs/{org_id}/ssos/{sso_id}/metadata.xml";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
 }

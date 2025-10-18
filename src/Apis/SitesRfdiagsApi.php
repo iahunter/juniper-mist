@@ -9,81 +9,85 @@ class SitesRfdiagsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * getSiteSiteRfdiagRecording
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteSiteRfdiagRecording(): array
     {
         $path = "/api/v1/sites/{site_id}/rfdiags";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * startSiteRecording
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function startSiteRecording(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/rfdiags";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * getSiteRfdiagRecording
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteRfdiagRecording(): array
     {
         $path = "/api/v1/sites/{site_id}/rfdiags/{rfdiag_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateSiteRfdiagRecording
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateSiteRfdiagRecording(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/rfdiags/{rfdiag_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteSiteRfdiagRecording
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteSiteRfdiagRecording(): array
     {
         $path = "/api/v1/sites/{site_id}/rfdiags/{rfdiag_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * downloadSiteRfdiagRecording
-     * @return array Decoded JSON response
+     * @return array
      */
     public function downloadSiteRfdiagRecording(): array
     {
         $path = "/api/v1/sites/{site_id}/rfdiags/{rfdiag_id}/download";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * stopSiteRfdiagRecording
-     * @return array Decoded JSON response
+     * @return array
      */
     public function stopSiteRfdiagRecording(): array
     {
         $path = "/api/v1/sites/{site_id}/rfdiags/{rfdiag_id}/stop";
-        return $this->http->request('POST', $path, null, null);
+        $resp = $this->http->request('POST', $path, null, null);
+        return $resp;
     }
 
 }

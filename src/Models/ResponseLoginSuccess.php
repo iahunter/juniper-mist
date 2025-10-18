@@ -5,18 +5,17 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model ResponseLoginSuccess
+ */
 class ResponseLoginSuccess extends BaseModel
 {
+    /** @var string */
     public string $email;
+    /** @var boolean */
     public bool $two_factor_passed;
+    /** @var boolean */
     public bool $two_factor_required;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

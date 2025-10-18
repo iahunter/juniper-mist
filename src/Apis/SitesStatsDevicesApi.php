@@ -9,61 +9,63 @@ class SitesStatsDevicesApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteDevicesStats
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteDevicesStats(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/stats/devices";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * getSiteDeviceStats
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteDeviceStats(): array
     {
         $path = "/api/v1/sites/{site_id}/stats/devices/{device_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * getSiteAllClientsStatsByDevice
-     * @return array Decoded JSON response
+     * @return \Iahunter\JuniperMist\Models\StatsWirelessClients
      */
-    public function getSiteAllClientsStatsByDevice(): array
+    public function getSiteAllClientsStatsByDevice(): \Iahunter\JuniperMist\Models\StatsWirelessClients
     {
         $path = "/api/v1/sites/{site_id}/stats/devices/{device_id}/clients";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return \Iahunter\JuniperMist\Models\StatsWirelessClients::fromArray($resp);
     }
 
     /**
      * getSiteGatewayMetrics
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteGatewayMetrics(): array
     {
         $path = "/api/v1/sites/{site_id}/stats/gateways/metrics";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * getSiteSwitchesMetrics
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteSwitchesMetrics(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/stats/switches/metrics";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
 }

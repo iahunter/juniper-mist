@@ -9,94 +9,99 @@ class OrgsTicketsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listOrgTickets
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listOrgTickets(): array
     {
         $path = "/api/v1/orgs/{org_id}/tickets";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * createOrgTicket
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createOrgTicket(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/tickets";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * countOrgTickets
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countOrgTickets(array $query = []): array
     {
         $path = "/api/v1/orgs/{org_id}/tickets/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * getOrgTicket
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getOrgTicket(): array
     {
         $path = "/api/v1/orgs/{org_id}/tickets/{ticket_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateOrgTicket
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateOrgTicket(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/tickets/{ticket_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * UploadOrgTicketAttachment
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function UploadOrgTicketAttachment(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/tickets/{ticket_id}/attachments";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * GetOrgTicketAttachment
-     * @return array Decoded JSON response
+     * @return array
      */
     public function GetOrgTicketAttachment(): array
     {
         $path = "/api/v1/orgs/{org_id}/tickets/{ticket_id}/attachments/{attachment_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * addOrgTicketComment
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function addOrgTicketComment(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/tickets/{ticket_id}/comments";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
 }

@@ -5,19 +5,19 @@ namespace Iahunter\JuniperMist\Models;
 
 use Iahunter\JuniperMist\Models\BaseModel;
 
+/**
+ * Model ResponseSsrUpgradeStatusTargets
+ */
 class ResponseSsrUpgradeStatusTargets extends BaseModel
 {
+    /** @var mixed */
     public $failed;
+    /** @var mixed */
     public $queued;
+    /** @var mixed */
     public $success;
+    /** @var mixed */
     public $upgrading;
 
-    public function __construct(array $data = [])
-    {
-        foreach ($data as $k => $v) {
-            if (property_exists($this, $k)) {
-                $this->$k = $v;
-            }
-        }
-    }
+    public function __construct(array $data = []) { foreach ($data as $k=>$v) { if (property_exists($this,$k)) $this->$k = $v; } }
 }

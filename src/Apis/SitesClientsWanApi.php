@@ -9,53 +9,54 @@ class SitesClientsWanApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * countSiteWanClientEvents
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countSiteWanClientEvents(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/wan_client/events/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * countSiteWanClients
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countSiteWanClients(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/wan_clients/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * searchSiteWanClientEvents
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchSiteWanClientEvents(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/wan_clients/events/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * searchSiteWanClients
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchSiteWanClients(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/wan_clients/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
 }

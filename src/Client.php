@@ -624,8 +624,5 @@ class Client
         $this->samples_webhooks = new SamplesWebhooksApi($this->http);
     }
 
-    public function getHttp(): HttpClient
-    {
-        return $this->http;
-    }
+    public function getHttp(): HttpClient { return $this->http; }
 }

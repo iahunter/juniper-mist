@@ -9,126 +9,134 @@ class SitesMapsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteMaps
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteMaps(): array
     {
         $path = "/api/v1/sites/{site_id}/maps";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * createSiteMap
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createSiteMap(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/maps";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * importSiteMaps
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function importSiteMaps(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/maps/import";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * getSiteMap
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteMap(): array
     {
         $path = "/api/v1/sites/{site_id}/maps/{map_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateSiteMap
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateSiteMap(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/maps/{map_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteSiteMap
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteSiteMap(): array
     {
         $path = "/api/v1/sites/{site_id}/maps/{map_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * addSiteMapImage
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function addSiteMapImage(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/maps/{map_id}/image";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteSiteMapImage
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteSiteMapImage(): array
     {
         $path = "/api/v1/sites/{site_id}/maps/{map_id}/image";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
     /**
      * replaceSiteMapImage
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function replaceSiteMapImage(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/maps/{map_id}/replace";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * bulkAssignSiteApsToMap
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function bulkAssignSiteApsToMap(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/maps/{map_id}/set_map";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * importSiteWayfindings
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function importSiteWayfindings(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/maps/{map_id}/wayfinding/import";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
 }

@@ -9,19 +9,17 @@ class SitesStatsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * getSiteStats
-     * @return array Decoded JSON response
+     * @return \Iahunter\JuniperMist\Models\StatsSite
      */
-    public function getSiteStats(): array
+    public function getSiteStats(): \Iahunter\JuniperMist\Models\StatsSite
     {
         $path = "/api/v1/sites/{site_id}/stats";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return \Iahunter\JuniperMist\Models\StatsSite::fromArray($resp);
     }
 
 }

@@ -9,61 +9,63 @@ class OrgsGatewayTemplatesApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listOrgGatewayTemplates
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listOrgGatewayTemplates(): array
     {
         $path = "/api/v1/orgs/{org_id}/gatewaytemplates";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * createOrgGatewayTemplate
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function createOrgGatewayTemplate(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/gatewaytemplates";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * getOrgGatewayTemplate
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getOrgGatewayTemplate(): array
     {
         $path = "/api/v1/orgs/{org_id}/gatewaytemplates/{gatewaytemplate_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * updateOrgGatewayTemplate
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function updateOrgGatewayTemplate(array $body = []): array
     {
         $path = "/api/v1/orgs/{org_id}/gatewaytemplates/{gatewaytemplate_id}";
-        return $this->http->request('PUT', $path, null, $body);
+        $resp = $this->http->request('PUT', $path, null, $body);
+        return $resp;
     }
 
     /**
      * deleteOrgGatewayTemplate
-     * @return array Decoded JSON response
+     * @return array
      */
     public function deleteOrgGatewayTemplate(): array
     {
         $path = "/api/v1/orgs/{org_id}/gatewaytemplates/{gatewaytemplate_id}";
-        return $this->http->request('DELETE', $path, null, null);
+        $resp = $this->http->request('DELETE', $path, null, null);
+        return $resp;
     }
 
 }

@@ -9,81 +9,85 @@ class SitesStatsAssetsApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * listSiteAssetsStats
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteAssetsStats(): array
     {
         $path = "/api/v1/sites/{site_id}/stats/assets";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * countSiteAssets
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function countSiteAssets(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/stats/assets/count";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * searchSiteAssets
      * @param array $query Query params
-     * @return array Decoded JSON response
+     * @return array
      */
     public function searchSiteAssets(array $query = []): array
     {
         $path = "/api/v1/sites/{site_id}/stats/assets/search";
-        return $this->http->request('GET', $path, $query, null);
+        $resp = $this->http->request('GET', $path, $query, null);
+        return $resp;
     }
 
     /**
      * getSiteAssetStats
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteAssetStats(): array
     {
         $path = "/api/v1/sites/{site_id}/stats/assets/{asset_id}";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * listSiteDiscoveredAssets
-     * @return array Decoded JSON response
+     * @return \Iahunter\JuniperMist\Models\Assets
      */
-    public function listSiteDiscoveredAssets(): array
+    public function listSiteDiscoveredAssets(): \Iahunter\JuniperMist\Models\Assets
     {
         $path = "/api/v1/sites/{site_id}/stats/discovered_assets";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return \Iahunter\JuniperMist\Models\Assets::fromArray($resp);
     }
 
     /**
      * getSiteAssetsOfInterest
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteAssetsOfInterest(): array
     {
         $path = "/api/v1/sites/{site_id}/stats/filtered_assets";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * getSiteDiscoveredAssetByMap
-     * @return array Decoded JSON response
+     * @return \Iahunter\JuniperMist\Models\StatsAssets
      */
-    public function getSiteDiscoveredAssetByMap(): array
+    public function getSiteDiscoveredAssetByMap(): \Iahunter\JuniperMist\Models\StatsAssets
     {
         $path = "/api/v1/sites/{site_id}/stats/maps/{map_id}/discovered_assets";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return \Iahunter\JuniperMist\Models\StatsAssets::fromArray($resp);
     }
 
 }

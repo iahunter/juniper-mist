@@ -9,19 +9,17 @@ class OrgsCrlApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * getOrgCrlFile
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getOrgCrlFile(): array
     {
         $path = "/api/v1/orgs/{org_id}/crl";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
 }

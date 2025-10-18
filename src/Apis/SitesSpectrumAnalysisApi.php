@@ -9,40 +9,40 @@ class SitesSpectrumAnalysisApi
 {
     private HttpClient $http;
 
-    public function __construct(HttpClient $http)
-    {
-        $this->http = $http;
-    }
+    public function __construct(HttpClient $http){ $this->http = $http; }
 
     /**
      * getSiteRunningSpectrumAnalysis
-     * @return array Decoded JSON response
+     * @return array
      */
     public function getSiteRunningSpectrumAnalysis(): array
     {
         $path = "/api/v1/sites/{site_id}/analyze_spectrum";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
     /**
      * initiateSiteAnalyzeSpectrum
      * @param array $body Request body
-     * @return array Decoded JSON response
+     * @return array
      */
     public function initiateSiteAnalyzeSpectrum(array $body = []): array
     {
         $path = "/api/v1/sites/{site_id}/analyze_spectrum";
-        return $this->http->request('POST', $path, null, $body);
+        $resp = $this->http->request('POST', $path, null, $body);
+        return $resp;
     }
 
     /**
      * listSiteSpectrumAnalysis
-     * @return array Decoded JSON response
+     * @return array
      */
     public function listSiteSpectrumAnalysis(): array
     {
         $path = "/api/v1/sites/{site_id}/stats/analyze_spectrum";
-        return $this->http->request('GET', $path, null, null);
+        $resp = $this->http->request('GET', $path, null, null);
+        return $resp;
     }
 
 }
